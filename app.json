@@ -1,0 +1,54 @@
+{
+  "expo": {
+    "name": "Harmony",
+    "slug": "harmony-emotion-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "harmony",
+    "userInterfaceStyle": "light",
+    "icon": "./assets/logo.png",
+    "splash": {
+      "image": "./assets/logo.png",
+      "backgroundColor": "#1E1B4B",
+      "resizeMode": "contain"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.harmony.emotionapp",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Harmony uses your camera to detect facial expressions and analyze emotions.",
+        "NSPhotoLibraryUsageDescription": "Harmony may access your photos for emotion analysis."
+      }
+    },
+    "android": {
+      "package": "com.harmony.emotionapp",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1E1B4B"
+      },
+      "permissions": [
+        "CAMERA"
+      ],
+      "googleServicesFile": "./google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Harmony uses your camera to detect facial expressions and analyze emotions."
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": ""
+      }
+    }
+  }
+}
