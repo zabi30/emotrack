@@ -1,85 +1,162 @@
-# Harmony - Public Distribution Guide
+# Harmony
 
-Harmony is an Expo React Native app for facial emotion capture and analysis with Firebase auth.
+Harmony is a cross-platform mobile application built with React Native and Expo that captures facial expressions and analyzes emotions using AI. The app provides a simple and secure authentication system with Firebase and presents emotion analysis results through an intuitive user interface.
 
 ## Features
 
-- Email/password authentication with Firebase
-- Camera-based emotion capture
-- Emotion result visualization
+- User authentication with Firebase
+- Facial emotion detection using the device camera
+- Emotion analysis and visualization
+- Secure configuration using environment variables
+- Cross-platform support (Android and iOS)
+- Built with Expo Managed Workflow
 
-## Requirements
+## Tech Stack
 
-- Node.js 18+
-- npm 9+
-- Expo account
+- React Native
+- Expo
+- Firebase Authentication
+- JavaScript
+- AI Emotion Recognition API
 
-## 1) Install
+## Project Structure
+
+```
+.
+├── assets/
+├── src/
+│   ├── components/
+│   ├── config/
+│   ├── screens/
+│   └── utils/
+├── App.js
+├── app.json
+├── package.json
+├── babel.config.js
+└── README.md
+```
+
+## Prerequisites
+
+Before running the project, make sure you have:
+
+- Node.js 18 or later
+- npm
+- Expo CLI (optional)
+- Firebase project
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/harmony.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd harmony
+```
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-## 2) Configure environment
+## Environment Variables
 
-Copy [.env.example](.env.example) to `.env` and fill all required values.
-
-Required variables:
-
-- `EXPO_PUBLIC_FIREBASE_API_KEY`
-- `EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN`
-- `EXPO_PUBLIC_FIREBASE_PROJECT_ID`
-- `EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET`
-- `EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
-- `EXPO_PUBLIC_FIREBASE_APP_ID`
-
-Optional AI provider variables are listed in [.env.example](.env.example).
-
-## 3) Firebase setup
-
-1. Create Firebase project.
-2. Enable Authentication providers:
-   - Email/Password
-3. Add Android/iOS app entries in Firebase.
-4. Keep [google-services.json](google-services.json) aligned with your Firebase Android app.
-
-## 4) Run locally
+Create a `.env` file in the project root by copying `.env.example`.
 
 ```bash
-npx expo start -c
+cp .env.example .env
 ```
 
-## 5) Public build and distribution
+Configure the following Firebase variables:
 
-1. Log in:
-   ```bash
-   npx expo login
-   ```
-2. Configure EAS project:
-   ```bash
-   npx eas init
-   ```
-3. Build:
-   ```bash
-   npx eas build -p android
-   npx eas build -p ios
-   ```
-4. Submit:
-   ```bash
-   npx eas submit -p android
-   npx eas submit -p ios
-   ```
+```env
+EXPO_PUBLIC_FIREBASE_API_KEY=
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+EXPO_PUBLIC_FIREBASE_APP_ID=
+```
 
-## Security checklist before publishing
+If you're using an external AI provider for emotion detection, add the required API credentials as documented in `.env.example`.
 
-- No real keys committed in source files.
-- `.env` is not committed.
-- Firebase rules reviewed for public app usage.
-- Google OAuth consent screen set to Production.
-- Face++ (or other AI provider) keys rotated if they were ever exposed.
+## Firebase Setup
 
-## Notes
+1. Create a Firebase project.
+2. Enable **Email/Password Authentication**.
+3. Register your Android and/or iOS application.
+4. Download the Firebase configuration file.
+5. Place `google-services.json` in the project root for Android.
 
-- This app uses Expo-managed workflow.
-- Google sign-in in Expo Go uses Expo proxy redirect URI.
-- For production store builds, keep OAuth/Firebase package IDs consistent.
+## Running the Project
+
+Start the Expo development server:
+
+```bash
+npx expo start
+```
+
+Run the application on:
+
+- Android Emulator
+- iOS Simulator
+- Physical device using Expo Go
+
+## Building for Production
+
+Login to Expo:
+
+```bash
+npx expo login
+```
+
+Initialize EAS:
+
+```bash
+npx eas init
+```
+
+Build Android:
+
+```bash
+npx eas build -p android
+```
+
+Build iOS:
+
+```bash
+npx eas build -p ios
+```
+
+Submit builds:
+
+```bash
+npx eas submit -p android
+npx eas submit -p ios
+```
+
+## Security
+
+Before publishing the application:
+
+- Do not commit the `.env` file.
+- Store API keys securely.
+- Review Firebase security rules.
+- Ensure OAuth credentials are configured correctly.
+- Rotate API keys if they have been exposed.
+
+## License
+
+This project is intended for educational and development purposes.
+
+## Author
+
+**Zabi Ullah**
+
+GitHub: https://github.com/zabi30
