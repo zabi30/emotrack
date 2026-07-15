@@ -2,6 +2,11 @@
 
 Harmony is a cross-platform mobile application built with React Native and Expo that captures facial expressions and analyzes emotions using AI. The app provides a simple and secure authentication system with Firebase and presents emotion analysis results through an intuitive user interface.
 
+Watch a quick walkthrough of Emotrack in action:
+
+[ Click here to view the demo](https://drive.google.com/file/d/1dsSDEGxuODH1y7XOcl0gupRXJLXtcRa9/view?usp=sharing)
+
+
 ## Features
 
 - User authentication with Firebase
